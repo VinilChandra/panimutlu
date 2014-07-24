@@ -50,14 +50,17 @@
           <ul id="menu">
                     <% if signed_in? %>
                    <li><a href="http://localhost:3000/static_pages/home" style="margin-right:15px;">Home</a></li>
-                  <li><%= link_to "Profile", current_user %></li>
+                  <li><%= link_to "Profile", jobs_path %></li>
                   <%else%>
                    <li><a href="http://localhost:3000/static_pages/home" style="margin-right:15px;">Home</a></li>
                    <%end%>
 
 
-
-                    <li><a href="http://localhost:3000/static_pages/jobs"  style="margin-right:15px;">Jobs</a></li>
+                       <% if signed_in? %>
+                    <li><a href="http://localhost:3000/jobregistrations"  style="margin-right:15px;">Jobs</a></li>
+                    <%else%>
+                     <li><a href="http://localhost:3000/static_pages/jobs"  style="margin-right:15px;">Jobs</a></li>
+                     <%end%>
                     <li><a href="http://localhost:3000/static_pages/training" style="margin-right:15px;">Training</a></li>
                     <li><a href="http://localhost:3000/static_pages/csr" style="margin-right:15px;">CSR</a></li>
                     <li><a href="http://localhost:3000/static_pages/about">About</a>

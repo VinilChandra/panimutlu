@@ -8,8 +8,8 @@ class SessionsController < ApplicationController
 
       if user && user.authenticate(params[:session][:password])
         sign_in user
-        flash[:notice] = "You have successfully ."
-        redirect_to user, notice: "You have successfully ."
+        flash[:notice] = " Logged In ."
+        redirect_to  jobs_path
       else
 
         flash[:notice] = 'Invalid email/password combination'

@@ -11,7 +11,48 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140724054430) do
+ActiveRecord::Schema.define(version: 20140724095834) do
+
+  create_table "jobregistrations", force: true do |t|
+    t.string   "name"
+    t.integer  "age"
+    t.string   "housenumber"
+    t.string   "street"
+    t.string   "village"
+    t.string   "district"
+    t.string   "state"
+    t.string   "phone"
+    t.string   "email"
+    t.string   "experience"
+    t.string   "qualification"
+    t.string   "school1"
+    t.string   "school2"
+    t.string   "school3"
+    t.string   "school4"
+    t.string   "passout1"
+    t.string   "passout2"
+    t.string   "passout3"
+    t.string   "passout4"
+    t.string   "standard1"
+    t.string   "standard2"
+    t.string   "standard3"
+    t.string   "standard4"
+    t.string   "job1"
+    t.string   "job2"
+    t.string   "job3"
+    t.string   "exp1"
+    t.string   "exp2"
+    t.string   "exp3"
+    t.text     "desc"
+    t.string   "languages"
+    t.string   "choicelocation"
+    t.string   "previoussalary"
+    t.string   "expectedsalary"
+    t.string   "religion"
+    t.string   "caste"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
 
   create_table "jobs", force: true do |t|
     t.string   "title"

@@ -1,8 +1,10 @@
 Rails.application.routes.draw do
 
-
+   resources :jobregistrations
       resources :users
+      resources :jobs
        resources :sessions, only: [:new, :create, :destroy]
+
   get 'static_pages/home'
 
   get 'static_pages/help'
