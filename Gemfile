@@ -32,6 +32,12 @@ gem 'spring',        group: :development
 gem 'bcrypt', '~> 3.1.7'
 gem 'simple_captcha2', require: 'simple_captcha'# gem 'bcrypt', '~> 3.1.7'
 gem 'rmagick', '~> 2.13.2'
+
+group :development, :test do
+ gem "rspec-rails", "~> 2.14.0"
+ gem "factory_girl_rails", "~> 4.2.1"
+ end
+gem 'faker'
 # Use unicorn as the app server
 # gem 'unicorn'
 

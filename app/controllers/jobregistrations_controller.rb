@@ -1,5 +1,6 @@
 class JobregistrationsController < ApplicationController
     def index
+        @current=current_user
         @jobs=Jobregistration.new
     end
 

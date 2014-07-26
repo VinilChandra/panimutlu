@@ -15,7 +15,7 @@
                 onblur="if(this.value=='')this.value=this.defaultValue" value="Password" id="Password" />
     </div>
     <div class="login-b3">
-        <a href="#">Forgot Your Password?</a>
+        <p><%= link_to "forgotten password?", new_password_reset_path %></p>
     </div>
     <div class="login-b4">
         <input name="button" type="submit" class="btn-style2" id="button" value="SignIn" />

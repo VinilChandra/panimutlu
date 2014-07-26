@@ -31,7 +31,16 @@ Rails.application.configure do
   # Checks for improperly declared sprockets dependencies.
   # Raises helpful error messages.
   config.assets.raise_runtime_errors = true
-
+config.action_mailer.delivery_method = :smtp
+config.action_mailer.smtp_settings = {
+  :address              => "smtp.gmail.com",
+  :port                 => 587,
+  :domain               => 'baci.lindsaar.net',
+  :user_name            => 'panimutlu@gmail.com',
+  :password             => 'orange769',
+  :authentication       => 'plain',
+  :enable_starttls_auto => true  }
+  config.action_mailer.default_url_options = { :host => "localhost:3000" }
   # Raises error for missing translations
   # config.action_view.raise_on_missing_translations = true
 end

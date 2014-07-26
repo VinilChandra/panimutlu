@@ -11,15 +11,14 @@ class User < ActiveRecord::Base
                     uniqueness: { case_sensitive: false }
 
 
-  validates_numericality_of :phone, :only_integer => true, presence:true,
-    length: { minimum: 10 }
+  validates :phone, presence: true,numericality: { greater_than_or_equal_to: 10 }
 
   validates :address,presence: true
   validates :state,presence: true
   validates :dist,presence: true
   validates :citytown,presence: true
   validates :mandal,presence: true
-  validates :password, length: { minimum: 6 }
+  #validates :password, presence: true
 #  DateRegex = /(?<month>\d{1,2})\/(?<day>\d{1,2})\/(?<year>\d{4})/
 
 # validates_format_of :birth, :with => DateRegex
@@ -31,7 +30,20 @@ class User < ActiveRecord::Base
   def User.digest(token)
     Digest::SHA1.hexdigest(token.to_s)
   end
+before_create { generate_token(:remember_token) }
 
+  def send_password_reset
+    generate_token(:password_reset_token)
+    self.password_reset_sent_at = Time.zone.now
+    save!
+    UserMailer.password_reset(self).deliver
+  end
+
+  def generate_token(column)
+    begin
+      self[column] = SecureRandom.urlsafe_base64
+    end while User.exists?(column => self[column])
+  end
   private
 
     def create_remember_token

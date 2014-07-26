@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140725045920) do
+ActiveRecord::Schema.define(version: 20140725140548) do
 
   create_table "jobregistrations", force: true do |t|
     t.string   "name"
@@ -88,6 +88,8 @@ ActiveRecord::Schema.define(version: 20140725045920) do
     t.date     "Date"
     t.string   "remember_token"
     t.string   "birth"
+    t.string   "password_reset_token"
+    t.datetime "password_reset_sent_at"
   end
 
   add_index "users", ["remember_token"], name: "index_users_on_remember_token"

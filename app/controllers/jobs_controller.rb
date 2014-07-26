@@ -1,18 +1,6 @@
 class JobsController < ApplicationController
-
-
-   def index
-
+  def index
     @jobs = Job.all
-
-   end
-
-
-
-
-
-
-
-
+  end
 
 end
