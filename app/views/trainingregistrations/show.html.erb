@@ -16,122 +16,140 @@ body {
 </style></head>
 
 <body>
+<div class="content-wrapper">
+  <div class="content-main">
+      <div class="job-tbl-head">
+          <div class="job-tbl-head-txt" style="width:950px;">
+              Job Application Form
+            </div>
+        </div>
+<%= form_for Trainingregistration.new do |f| %>
 
-<%= form_for (@jobs) do |f| %>
 
 <%= render 'errormessages/error_messages', object: f.object %>
-<h1>Job Application Form </h1>
-<table width="900" border="0" align="center" cellpadding="0" cellspacing="10">
+
+<h1> </h1>
+<table width="900" border="0" align="center" cellpadding="0" cellspacing="10" style="float:left;">
   <tr>
     <td width="147" align="right">Name ;</td>
     <td colspan="5"><label>
-      <input type="text" name="jobregistration[name]" id="textfield" />
+      <input type="text" name="trainingregistration[name]" id="textfield" />
     </label></td>
   </tr>
   <tr>
 
     <td align="right">Age :</td>
-    <td colspan="5"><input type="text" name="jobregistration[age]" id="textfield2" /></td>
+    <td colspan="5"><input type="text" name="trainingregistration[age]" id="textfield2" /></td>
   </tr>
+<!-- ________________________________________ -->
+
+<tr>
+
+    <td colspan="5"><input type="hidden" name="trainingregistration[hiddenid]" id="hiddenfield" value = "<%=params[:id]%>" /></td>
+  </tr>
+
+
+<!-- __________________________________________________________ -->
+
 
   <tr>
     <td align="right">House No :</td>
-    <td colspan="5"><input type="text" name="jobregistration[housenumber]" id="textfield3" /></td>
+    <td colspan="5"><input type="text" name="trainingregistration[housenumber]" id="textfield3" /></td>
   </tr>
   <tr>
     <td align="right">Street :</td>
-    <td colspan="5"><input type="text" name="jobregistration[street]" id="textfield4" /></td>
+    <td colspan="5"><input type="text" name="trainingregistration[street]" id="textfield4" /></td>
   </tr>
   <tr>
     <td align="right">Town / Village : </td>
-    <td colspan="5"><input type="text" name="jobregistration[village]" id="textfield5" /></td>
+    <td colspan="5"><input type="text" name="trainingregistration[village]" id="textfield5" /></td>
   </tr>
   <tr>
     <td align="right">District :</td>
-    <td width="144"><input type="text" name="jobregistration[district]" id="textfield6" /></td>
+    <td width="144"><input type="text" name="trainingregistration[district]" id="textfield6" /></td>
     <td width="148" align="right">State : </td>
-    <td colspan="3"><input type="text" name="jobregistration[state]" id="textfield7" /></td>
+    <td colspan="3"><input type="text" name="trainingregistration[state]" id="textfield7" /></td>
   </tr>
   <tr>
     <td align="right">Phone : </td>
-    <td colspan="5"><input type="text" name="jobregistration[phone]" id="textfield8" /></td>
+    <td colspan="5"><input type="text" name="trainingregistration[phone]" id="textfield8" /></td>
   </tr>
   <tr>
     <td align="right">Email : </td>
-    <td colspan="5"><input type="text" name="jobregistration[email]" id="textfield9" /></td>
+    <td colspan="5"><input type="text" name="trainingregistration[email]" id="textfield9" /></td>
   </tr>
   <tr>
     <td align="right">Exp : </td>
-    <td colspan="5"><input type="text" name="jobregistration[experience]" id="textfield10" /></td>
+    <td colspan="5"><input type="text" name="trainingregistration[experience]" id="textfield10" /></td>
   </tr>
   <tr>
     <td align="right">Qualification : </td>
     <td colspan="5"><label>
-      <select name="jobregistration[qualification]" id="select">
+      <select name="trainingregistration[qualification]" id="select">
         <option>Please Select</option>
       </select>
     </label></td>
   </tr>
   <tr>
     <td align="right">School : </td>
-    <td><input type="text" name="jobregistration[school1]" id="textfield11" /></td>
+    <td><input type="text" name="trainingregistration[school1]" id="textfield11" /></td>
     <td align="right">Passout : </td>
-    <td width="167"><input type="text" name="jobregistration[passout1]" id="textfield12" /></td>
+    <td width="167"><input type="text" name="trainingregistration[passout1]" id="textfield12" /></td>
     <td width="80" align="right">Standard : </td>
-    <td width="144"><input type="text" name="jobregistration[standard1]" id="textfield13" /></td>
+    <td width="144"><input type="text" name="trainingregistration[standard1]" id="textfield13" /></td>
   </tr>
   <tr>
     <td align="right">School : </td>
-    <td><input type="text" name="jobregistration[school2]" id="textfield14" /></td>
+    <td><input type="text" name="trainingregistration[school2]" id="textfield14" /></td>
     <td align="right">Passout : </td>
-    <td><input type="text" name="jobregistration[passout2]" id="textfield15" /></td>
+    <td><input type="text" name="trainingregistration[passout2]" id="textfield15" /></td>
     <td align="right">Standard : </td>
-    <td><input type="text" name="jobregistration[standard2]" id="textfield16" /></td>
+    <td><input type="text" name="trainingregistration[standard2]" id="textfield16" /></td>
   </tr>
   <tr>
     <td align="right">School : </td>
-    <td><input type="text" name="jobregistration[school3]" id="textfield17" /></td>
+    <td><input type="text" name="trainingregistration[school3]" id="textfield17" /></td>
     <td align="right">Passout : </td>
-    <td><input type="text" name="jobregistration[passout3]" id="textfield18" /></td>
+    <td><input type="text" name="trainingregistration[passout3]" id="textfield18" /></td>
     <td align="right">Standard : </td>
-    <td><input type="text" name="jobregistration[standard3]" id="textfield19" /></td>
+    <td><input type="text" name="trainingregistration[standard3]" id="textfield19" /></td>
   </tr>
   <tr>
     <td align="right">School : </td>
-    <td><input type="text" name="jobregistration[school4]" id="textfield20" /></td>
+    <td><input type="text" name="trainingregistration[school4]" id="textfield20" /></td>
     <td align="right">Passout : </td>
-    <td><input type="text" name="jobregistration[passout4]" id="textfield21" /></td>
+    <td><input type="text" name="trainingregistration[passout4]" id="textfield21" /></td>
     <td align="right">Standard : </td>
-    <td><input type="text" name="jobregistration[standard4]" id="textfield22" /></td>
+    <td><input type="text" name="trainingregistration[standard4]" id="textfield22" /></td>
   </tr>
   <tr>
     <td align="right" valign="top">Job :</td>
-    <td valign="top"><input type="text" name="jobregistration[job1]" id="textfield23" /></td>
+    <td valign="top"><input type="text" name="trainingregistration[job1]" id="textfield23" /></td>
     <td align="right" valign="top">Experience : </td>
-    <td colspan="3" valign="top"><input type="text" name="jobregistration[exp1]" id="textfield24" /></td>
+    <td colspan="3" valign="top"><input type="text" name="trainingregistration[exp1]" id="textfield24" /></td>
   </tr>
   <tr>
     <td align="right" valign="top">Job :</td>
-    <td valign="top"><input type="text" name="jobregistration[job2]" id="textfield23" /></td>
+    <td valign="top"><input type="text" name="trainingregistration[job2]" id="textfield23" /></td>
     <td align="right" valign="top">Experience : </td>
-    <td colspan="3" valign="top"><input type="text" name="jobregistration[exp2]" id="textfield24" /></td>
+    <td colspan="3" valign="top"><input type="text" name="trainingregistration[exp2]" id="textfield24" /></td>
   </tr>
   <tr>
     <td align="right" valign="top">Job :</td>
-    <td valign="top"><input type="text" name="jobregistration[job3]" id="textfield23" /></td>
+    <td valign="top"><input type="text" name="trainingregistration[job3]" id="textfield23" /></td>
     <td align="right" valign="top">Experience : </td>
-    <td colspan="3" valign="top"><input type="text" name="jobregistration[exp3]" id="textfield24" /></td>
+    <td colspan="3" valign="top"><input type="text" name="trainingregistration[exp3]" id="textfield24" /></td>
   </tr>
   <tr>
     <td align="right" valign="top">Desc : </td>
     <td colspan="5"><label>
-      <textarea name="jobregistration[desc]" id="textarea" cols="45" rows="5"></textarea>
+      <textarea name="trainingregistration[desc]" id="textarea" cols="45" rows="5"></textarea>
     </label></td>
   </tr>
   <tr>
     <td align="right">Language : </td>
     <td colspan="5"><label>
-      <select multiple  name="jobregistration[languages]">
+      <select multiple  name="trainingregistration[languages]">
         <option value="Telugu">Telugu</option>
         <option value="English">English</option>
         <option value="Hindi">Hindi</option>
@@ -141,7 +159,7 @@ body {
   </tr>
   <tr>
     <td align="right">Choice of work Location : </td>
-    <td colspan="5"><select name="jobregistration[choicelocation]" id="select2">
+    <td colspan="5"><select name="trainingregistration[choicelocation]" id="select2">
       <option value="Andaman and Nicobar Islands">Andaman and Nicobar Islands</option>
 <option value="Andhra Pradesh">Andhra Pradesh</option>
 <option value="Arunachal Pradesh">Arunachal Pradesh</option>
@@ -183,14 +201,18 @@ body {
   </tr>
   <tr>
     <td align="right" valign="top">Previous Slary : </td>
-    <td valign="top"><input type="text" name="jobregistration[previoussalary]" id="textfield25" /></td>
+    <td valign="top"><input type="text" name="trainingregistration[previoussalary]" id="textfield25" /></td>
     <td align="right" valign="top">Expected Salaery : </td>
-    <td colspan="3" valign="top"><input type="text" name="jobregistration[expectedsalary]" id="textfield26" /></td>
+    <td colspan="3" valign="top"><input type="text" name="trainingregistration[expectedsalary]" id="textfield26" /></td>
   </tr>
   <tr>
-
+<tr>
+     <td align="right">Upload Resume :</td>
+     <td colspan="5"><input type="file" name="trainingregistration[attachment]" size="40"></td>
+  </tr>
+  <tr>
     <td align="right">Religion : </td>
-    <td colspan="5"><select name="jobregistration[religion]" id="select2">
+    <td><select name="trainingregistration[religion]" id="select2">
 
      <option value="Hindu">Hindu</option>
      <option value="Muslim">Muslim</option>
@@ -198,10 +220,16 @@ body {
      <option value="others">others</option>
 
 </select>
-    </select></td>fasdfas
+    </select></td>
 
-    <td align="right" valign="top">Caste  : </td>
-    <td colspan="3" valign="top"><input type="text" name="jobregistration[caste]" id="textfield28" /></td>
+    <td colspan="3" align="right" valign="top">Caste  : </td>
+    <td valign="top"><input type="text" name="trainingregistration[caste]" id="textfield28" /></td>
+  </tr>
+<tr>
+    <td align="right" valign="top">Job :</td>
+    <td valign="top"><input type="text" name="trainingregistration[job1]" id="textfield23" /></td>
+    <td align="right" valign="top">Experience : </td>
+    <td colspan="3" valign="top"><input type="text" name="trainingregistration[exp1]" id="textfield24" /></td>
   </tr>
   <tr>
     <td align="right">&nbsp;</td>
@@ -209,7 +237,9 @@ body {
       <input type="submit" name="button" id="button" value="Submit" />
     </label></td>
   </tr>
+
 </table>
 <%end%>
+</div>
 </body>
 </html>

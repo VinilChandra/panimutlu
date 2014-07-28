@@ -27,11 +27,9 @@ window.onload=function(){
   <div class="content-main">
       <div class="job-tbl-head">
           <div class="job-tbl-head-txt">
-              Current Openings
+              Current Trainings
             </div>
-<div class="job-tbl-head-btn2">
-              Training
-            </div>
+
 <div class="job-tbl-head-btn1">
               Future Jobs
             </div>
@@ -41,20 +39,20 @@ window.onload=function(){
 
           <table width="100%" border="0" id="alternatecolor" cellspacing="0" cellpadding="0">
   <tr>
-    <th width="17%" align="left">Job Title</th>
+    <th width="17%" align="left">Training  Title</th>
     <th width="44%" align="left">Description</th>
     <th width="15%" align="left">Company</th>
     <th width="13%" align="left">Valid Date</th>
     <th width="11%" align="center">Apply</th>
   </tr>
-   <% @jobs.each do |j| %>
+   <% @trainings.each do |t| %>
   <tr>
-    <td class="jobs"><%= j.title%></td>
-    <td> <%= j.desc %></td>
-    <td class="company"><%=j.name %></td>
-    <td class="expiry"><%=j.validdate%></td>
+    <td class="jobs"><%= t.title%></td>
+    <td> <%= t.desc %></td>
+    <td class="company"><%=t.name %></td>
+    <td class="expiry"><%=t.validdate%></td>
     <td align="center" valign="middle">
-      <a href="/jobregistrations/<%= j.id %>">Apply Job </a></td>
+      <a href="/trainingregistrations/<%= t.id %>">Apply Training </a></td>
   </tr>
   <% end %>
           </table>

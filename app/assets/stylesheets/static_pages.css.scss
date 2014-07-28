@@ -503,7 +503,7 @@ background-image: image-url('login-bg.png');
     float:left;
     margin:10px 0px 25px 40px;
 }
-.login-b4 btn-style2 {
+.login-btn1{
     display:block;
     float:left;
     text-align:center;
@@ -517,7 +517,7 @@ background-image: image-url('login-bg.png');
     -moz-border-radius: 5px;
     border-radius: 5px;
 }
-.login-b4 btn-style2:hover {
+.login-btn1:hover {
     background:#000;
 }
 .login-b5 {
@@ -545,21 +545,30 @@ background-image: image-url('login-bg.png');
     font-size:12px;
     color:#7a7a7a;
 }
-.register-main{background-image: image-url('register-bg.png');
-width:708px;
-height:435px;
-margin:30px auto;
-}
+.register-main {
 
-.register-cnt{width:auto;
-height:auto;
-float:left;
-margin:120px 0px 0px 20px;
+    background: image-url('register-bg.png') no-repeat top;
+    width:708px;
+    height:668px;
+    margin:10px auto;
 }
-
-.register-cnt td{color:#494949;
-font-size:14px;
-padding:14px 5px;
+.register-cnt {
+    width:670px;
+    height:auto;
+    float:left;
+    margin:60px 0px 0px 10px;
+    padding:10px 15px;
+    background:#FFF;
+    -webkit-box-shadow: 0 0 8px 5px rgba(0, 0, 0, .2);
+    box-shadow: 0 0 8px 5px rgba(0, 0, 0, .2);
+    -webkit-border-radius: 6px;
+    -moz-border-radius: 6px;
+    border-radius: 6px;
+}
+.register-cnt td {
+    color:#494949;
+    font-size:14px;
+    padding:12px 5px;
 }
 
 .register-cnt2 td{color:#494949;
@@ -598,3 +607,128 @@ cursor:pointer;
 .btn-style2:hover{background:#000;
 }
 
+.job-tbl-head {
+       width:100%;
+       height:auto;
+       float:left;
+       margin:15px 0px 0px 0px;
+}
+.job-tbl-head-txt {
+       width:200px;
+       height:40px;
+       line-height:40px;
+       color:#666;
+       font-size:18px;
+       float:left;
+       margin-top:10px;
+       text-transform:uppercase;
+}
+.job-tbl-head-btn1 {
+       display:block;
+       float:right;
+       color:#FFF;
+       line-height:24px;
+       padding:0px 20px;
+       border:#000 1px solid;
+       margin:15px 10px 0px 0px;
+       cursor:pointer;
+       background: #7d7e7d; /* Old browsers */
+       background: -moz-linear-gradient(top, #7d7e7d 0%, #0e0e0e 100%); /* FF3.6+ */
+       background: -webkit-gradient(linear, left top, left bottom, color-stop(0%, #7d7e7d), color-stop(100%, #0e0e0e)); /* Chrome,Safari4+ */
+       background: -webkit-linear-gradient(top, #7d7e7d 0%, #0e0e0e 100%); /* Chrome10+,Safari5.1+ */
+       background: -o-linear-gradient(top, #7d7e7d 0%, #0e0e0e 100%); /* Opera 11.10+ */
+       background: -ms-linear-gradient(top, #7d7e7d 0%, #0e0e0e 100%); /* IE10+ */
+       background: linear-gradient(to bottom, #7d7e7d 0%, #0e0e0e 100%); /* W3C */
+filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#7d7e7d', endColorstr='#0e0e0e', GradientType=0 ); /* IE6-9 */
+}
+.job-tbl-head-btn2 {
+       display:block;
+       float:right;
+       color:#666;
+       line-height:24px;
+       padding:0px 20px;
+       border:#cdcdcd 1px solid;
+       margin:15px 0px 0px 0px;
+       cursor:pointer;
+       background: #ffffff; /* Old browsers */
+       background: -moz-linear-gradient(top, #ffffff 0%, #ededed 100%); /* FF3.6+ */
+       background: -webkit-gradient(linear, left top, left bottom, color-stop(0%, #ffffff), color-stop(100%, #ededed)); /* Chrome,Safari4+ */
+       background: -webkit-linear-gradient(top, #ffffff 0%, #ededed 100%); /* Chrome10+,Safari5.1+ */
+       background: -o-linear-gradient(top, #ffffff 0%, #ededed 100%); /* Opera 11.10+ */
+       background: -ms-linear-gradient(top, #ffffff 0%, #ededed 100%); /* IE10+ */
+       background: linear-gradient(to bottom, #ffffff 0%, #ededed 100%); /* W3C */
+filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ffffff', endColorstr='#ededed', GradientType=0 ); /* IE6-9 */
+}
+.job-tbl {
+       width:100%;
+       height:auto;
+       float:left;
+       margin-bottom: 10px;
+}
+.job-tbl table {
+       border:#d5d5d5 solid;
+       border-width:1px 1px 0px 1px;
+}
+.job-tbl table th {
+background-image: image-url('job-tbl-bg.png');
+
+       height:40px;
+       font-size:14px;
+       color:#000;
+       line-height:40px;
+       padding:0px 10px;
+}
+.job-tbl table td {
+       padding:15px 10px;
+       color:#666;
+       font-size:13px;
+       border-bottom:#d5d5d5 1px solid;
+}
+.job-tbl table tr:hover {
+       background:#F4F9FD;
+       cursor:pointer;
+}
+.job-tbl table td a {
+       display:block;
+       background:#F00;
+       font-size:12px;
+       color:#FFF;
+       padding:5px 15px;
+       font-weight:bold;
+       float:right;
+}
+.job-tbl table td.company {
+       font-size:13px;
+       font-weight:bold;
+       color:#333;
+}
+.job-tbl table td.jobs {
+       font-size:15px;
+       color:#069;
+}
+.job-tbl table td.expiry {
+       font-size:13px;
+       color:#930;
+}
+.job-tbl table td a:hover {
+       background:#333;
+}
+.oddrowcolor {
+       background-color:#FFF;
+}
+.evenrowcolor {
+       background-color:#f8f8f8;
+}
+
+.error-msg{width:auto;
+height:auto;
+}
+
+.error-msg li {display:block;
+color:#F00;
+margin:5px;
+padding:3px;
+border:#F00 1px solid;
+float:left;
+font-weight:bold;
+}

@@ -9,7 +9,7 @@ def create
 
  # binding.pry
  if simple_captcha_valid?
-      p "entered"
+
     if @user.save
         flash[:notice] = "You have successfully registered "
           redirect_to signin_path

@@ -5,7 +5,7 @@
   <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
 
 
-
+<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
   <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
   <%= csrf_meta_tags %>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
@@ -24,17 +24,17 @@
         <div class="logo">
         <table border="0" cellpadding="0" cellspacing="0" width="0">
 <!-- <td align="center" height="120px" valign="middle"> -->
-              <tbody> <%= link_to image_tag("logo.png", alt: "logo panimutlu",align: "center",height: "120px",valign: "middle"), 'http://localhost:3000/static_pages/home' %>
-            </tbody></table>
+         <tr><td height="120px" align="center" valign="middle"><%= link_to image_tag("logo.png", alt: "logo panimutlu"), '//static_pages/home' %>
+            </td></tr></table>
       </div>
         <div class="header-right">
             <table border="0" cellpadding="0" cellspacing="0">
             <tbody><tr>
             <!-- <td style="background:url(images/header-style-bg.png) repeat-y;" align="center" valign="middle" width="220"><img src="Welcome%20to%20Panimutlu.com_files/social-icons.png" alt="social" usemap="#Map" border="0"></td> -->
-            <td style="background:url(images/header-style-bg.png) repeat-y;" align="center" valign="middle" width="220"><%= link_to image_tag("social-icons.png", alt: "Rails"), '#' %>
+             <td style="background:url(../assets/header-style-bg.png) repeat-y;" align="center" valign="middle" width="220"><%= link_to image_tag("social-icons.png", alt: "Rails"), '#' %>
            <!--  <td style="background:url(images/header-style-bg.png) repeat-y;" align="center" valign="middle" width="220"><img src="Welcome%20to%20Panimutlu.com_files/contact-img.png" alt="Phone"></td> -->
-           <td style="background:url(images/header-style-bg.png) repeat-y;" align="center" valign="middle" width="220"><%= link_to image_tag("contact-img.png", alt: "Rails"), '#' %>
-            <td style="background:url(images/header-style-bg.png) repeat-y;" align="right" height="60" valign="middle" width="220">
+           <td style="background:url(../assets/header-style-bg.png) repeat-y;" align="center" valign="middle" width="220"><%= link_to image_tag("contact-img.png", alt: "Rails"), '#' %>
+            <td style="background:url(../assets/header-style-bg.png) repeat-y;" align="right" height="60" valign="middle" width="220">
 
             <% if signed_in? %>
              <a href="/signout" class="login-btn">Logout</a>
@@ -48,32 +48,23 @@
             <td colspan="3" height="65">
                 <div class="main-nav">
           <ul id="menu">
-          
-          <!-- hfkjsdaf -->
                     <% if signed_in? %>
-                   <li><a href="http://localhost:3000/static_pages/home" style="margin-right:15px;">Home</a></li>
+                   <li><a href="/static_pages/home" style="margin-right:15px;">Home</a></li>
                   <li><%= link_to "Profile", jobs_path %></li>
                   <%else%>
-                   <li><a href="http://localhost:3000/static_pages/home" style="margin-right:15px;">Home</a></li>
+                   <li><a href="/static_pages/home" style="margin-right:15px;">Home</a></li>
                    <%end%>
 
 
                        <% if signed_in? %>
-                    <li><a href="http://localhost:3000/jobregistrations"  style="margin-right:15px;">Jobs</a></li>
+                    <li><a href="/jobs"  style="margin-right:15px;">Jobs</a></li>
+                     <li><a href="/" style="margin-right:15px;">Training</a></li>
                     <%else%>
-                     <li><a href="http://localhost:3000/static_pages/jobs"  style="margin-right:15px;">Jobs</a></li>
+                     <li><a href="/signup"  style="margin-right:15px;">Jobs</a></li>
                      <%end%>
-                    <li><a href="http://localhost:3000/static_pages/training" style="margin-right:15px;">Training</a></li>
-                    <li><a href="http://localhost:3000/static_pages/csr" style="margin-right:15px;">CSR</a></li>
-                    <li><a href="http://localhost:3000/static_pages/about">About</a>
-                        <ul>
-                            <li><a href="http://localhost:3000/static_pages/company">Company</a></li>
-                            <li><a href="http://localhost:3000/static_pages/team">Team</a></li>
-                            <li><a href="http://localhost:3000/static_pages/careers">Careers</a></li>
-                            <li><a href="http://localhost:3000/static_pages/faq">FAQ's</a></li>
-                            <li><a href="http://localhost:3000/static_pages/contact">Contact</a></li>
-                      </ul>
-              </li>
+                    <li><a href="/signup" style="margin-right:15px;">Training</a></li>
+                    <li><a href="/static_pages/csr" style="margin-right:15px;">CSR</a></li>
+                    <li><a href="/static_pages/about">About</a></li>
                  </ul>
               </div>
             </td>
@@ -82,7 +73,9 @@
     </div>
   </div>
 </div>
-<%= flash[:notice]%>
+<% if flash[:notice] %>
+<div style="width:100%; height:32px;line-height:32px; text-align:center; color:#009dd4;font-weight:bold;float:left;font-size:16px;"><%= flash[:notice]%></div>
+<%end%>
 <%= yield %>
 
 <div class="footer-wrapper">
@@ -110,4 +103,3 @@
   ga('create', 'UA-53117381-1', 'auto');
   ga('send', 'pageview');
 
-</script>

@@ -1,8 +1,12 @@
 Rails.application.routes.draw do
 
    resources :jobregistrations
+      resources :trainingregistrations
+
       resources :users
       resources :jobs
+          resources :trainings
+
        resources :sessions, only: [:new, :create, :destroy]
 resources :password_resets
   get 'static_pages/home'
